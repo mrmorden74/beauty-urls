@@ -27,9 +27,9 @@ $path = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['HTTP_HOST']}/wifi/beauty-urls
                 <a href="<?php echo $path; ?>index.php">Index</a>
                 <?php
 //                echo $path;
-                $validIncs = ['admin'];
+                $validIncs = ['admin','wi-fi','wifi'];
 //                var_dump($include);
-//                echo $include->getRoute();
+                echo RouterStatic::getRoute($validIncs, 'inc', '.inc.php' );
                 include RouterStatic::getRoute($validIncs, 'inc', '.inc.php' );
 //                var_dump($_SERVER);
                 ?>
