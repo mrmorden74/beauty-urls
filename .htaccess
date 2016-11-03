@@ -5,4 +5,5 @@ RewriteCond %{SCRIPT_DIRNAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
 #RewriteRule ^.*$ http://wifi/beauty-urls/index.php
-RewriteRule ^.*$ ./index.php
+RewriteRule ^.*$ ./static-test.php
+#RewriteRule ^.*$ ./index.php

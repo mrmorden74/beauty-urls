@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 //require_once 'inc/routes.inc.php';
-require_once 'inc/router.class.php';
+require_once 'inc/router.static.class.php';
 $path = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['HTTP_HOST']}/wifi/beauty-urls/";
 
 ?>
@@ -21,17 +21,16 @@ $path = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['HTTP_HOST']}/wifi/beauty-urls
     <body>
         <div class="wrapper">
             <header class="main-header">
-                <h1>Pretty Urls</h1>
+                <h1>Pretty Urls- StaticClass</h1>
             </header>
             <main>
                 <a href="<?php echo $path; ?>index.php">Index</a>
                 <?php
 //                echo $path;
                 $validIncs = ['admin'];
-                $include = new Router($validIncs, 'inc', '.inc.php' );
 //                var_dump($include);
 //                echo $include->getRoute();
-                include $include->getRoute();
+                include RouterStatic::getRoute($validIncs, 'inc', '.inc.php' );
 //                var_dump($_SERVER);
                 ?>
             </main>
