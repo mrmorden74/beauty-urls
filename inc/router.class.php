@@ -36,6 +36,7 @@ class Router {
         return trim($path,'/\\');
     }
     private function cleanUrl() {
+            // var_dump($_SERVER);
         $params_root = explode('/', $_SERVER['SCRIPT_NAME']);
         $url = $_SERVER['REQUEST_URI'];
         foreach ($params_root AS $param_root) {
@@ -43,5 +44,13 @@ class Router {
             $url = str_replace($replace, '', $url);
         }
         return trim($url, '/');
+    }
+    public function getKeyValue($label) {
+        //   var_dump($_SERVER);
+        $url = $_SERVER['REQUEST_URI'];
+        $params = explode('/', $url);
+        foreach ($params AS $key => $param) {
+            if($param == $label) return $params[$key+1];
+        }
     }
 }

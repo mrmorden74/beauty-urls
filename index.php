@@ -7,7 +7,7 @@
  */
 //require_once 'inc/routes.inc.php';
 require_once 'inc/router.class.php';
-$path = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['HTTP_HOST']}/wifi/beauty-urls/";
+$path = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['HTTP_HOST']}/beauty-urls/";
 
 ?>
 <!doctype html>
@@ -29,10 +29,11 @@ $path = "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['HTTP_HOST']}/wifi/beauty-urls
 //                echo $path;
                 $validIncs = ['admin'];
                 $include = new Router($validIncs, 'inc', '.inc.php' );
-//                var_dump($include);
+                // echo '-'.$include->getID().'-';
 //                echo $include->getRoute();
+            //    echo var_dump($include);
                 include $include->getRoute();
-//                var_dump($_SERVER);
+               var_dump($_SERVER);
                 ?>
             </main>
         </div>
